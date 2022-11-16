@@ -1,5 +1,12 @@
 Jetpack Compose Clean Navigation
 
+## 引入
+```
+implementation 'io.github.yuexunshi:Nav:1.0.1'
+```
+
+
+
 [Navigation 组件](https://developer.android.com/guide/navigation)支持 [Jetpack Compose](https://developer.android.com/jetpack/compose) 应用。我们可以在利用 Navigation 组件的基础架构和功能，在可组合项之间导航。然而，在项目中使用之后，我发现这个组件真的不好用：
 
 - 耦合：导航需要持有**NavHostController**，在可组合函数中，必须传递**NavHostController**才能导航，导致所有需要导航的可组合函数都要持有**NavHostController**的引用。传递`callback`也是同样的问题。
