@@ -12,6 +12,7 @@ import com.asi.nav.model.User
 import com.asi.navsample.nav.*
 import com.asi.navsample.page.*
 import androidx.navigation.compose.composable
+import com.asi.nav.page.TwoScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background) {
-                    NavigationEffect(OneDestination.route) {
+                    NavigationEffect(startDestination=OneDestination.route) {
                         composable(OneDestination.route) { OneScreen() }
                         composable(TwoDestination.route) { TwoScreen() }
                         composable(FourDestination.route, arguments = FourDestination.arguments) {

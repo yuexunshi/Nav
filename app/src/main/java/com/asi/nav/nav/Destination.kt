@@ -1,10 +1,11 @@
 package com.asi.navsample.nav
 
+import android.util.Log
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
 import com.asi.nav.Destination
-import com.asi.navsample.model.NavUserType
 import com.asi.nav.model.User
+import com.asi.navsample.model.NavUserType
 
 /**
  * @ClassName N.java
@@ -40,9 +41,14 @@ object FiveDestination : Destination("five",
         navArgument("name") { type = NavType.StringType })) {
     const val ARG_AGE = "age"
     const val ARG_NAME = "name"
-    operator fun invoke(age: Int, name: String): String =
-        route.replace("{${arguments.first().name}}", "$age")
+    operator fun invoke(age: Int, name: String): String {
+        val replace = route.replace("{${arguments.first().name}}", "$age")
             .replace("{${arguments.last().name}}", name)
+        Log.e("FiveDestination", "invoke:replace ==$replace")
+        Log.e("FiveDestination", "invoke: route==$route")
+        return replace
+    }
+
 }
 //sealed class Screen(
 //    path: String,

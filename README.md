@@ -241,19 +241,7 @@ fun NavController.handleComposeNavigationIntent(intent: NavIntent) {
 
 ```kotlin
 @Composable
-fun RouterHost(
-    startDestination: String, builder: NavGraphBuilder.() -> Unit,
-) {
-    val navController = rememberNavController()
-    val destination by NavFlow.destination.collectAsState()
-    LaunchedEffect(destination) {
-        handleNavigationCommands(navController)
-    }
-    NavHost(
-        navController = navController,
-        startDestination = startDestination,
-        builder = builder@Composable
-fun NavigationEffects(
+fun NavigationEffect(
     startDestination: String, builder: NavGraphBuilder.() -> Unit,
 ) {
     val navController = rememberNavController()
@@ -277,8 +265,6 @@ fun NavigationEffects(
         navController = navController,
         startDestination = startDestination,
         builder = builder
-    )
-}
     )
 }
 ```

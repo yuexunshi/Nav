@@ -1,4 +1,4 @@
-package com.asi.navsample.page
+package com.asi.nav.page
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Button
