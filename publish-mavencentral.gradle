@@ -12,7 +12,7 @@ task androidSourcesJar(type: Jar) {
 ext {path=
         PUBLISH_GROUP_ID = 'io.github.sherlockshi'
     PUBLISH_ARTIFACT_ID = 'Nav'
-    PUBLISH_VERSION = '1.0.1'
+    PUBLISH_VERSION = '1.0.2'
 }
 
 ext["signing.keyId"] = ''
