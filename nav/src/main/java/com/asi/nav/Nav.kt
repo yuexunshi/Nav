@@ -16,10 +16,12 @@ object Nav : INav {
     }
 
     override fun back(route: String?, inclusive: Boolean) {
-        navigate(NavIntent.Back(
-            route = route,
-            inclusive = inclusive,
-        ))
+        navigate(
+            NavIntent.Back(
+                route = route,
+                inclusive = inclusive,
+            )
+        )
     }
 
 
@@ -29,19 +31,23 @@ object Nav : INav {
         inclusive: Boolean,
         isSingleTop: Boolean,
     ) {
-        navigate(NavIntent.To(
-            route = route,
-            popUpToRoute = popUpToRoute,
-            inclusive = inclusive,
-            isSingleTop = isSingleTop,
-        ))
+        navigate(
+            NavIntent.To(
+                route = route,
+                popUpToRoute = popUpToRoute,
+                inclusive = inclusive,
+                isSingleTop = isSingleTop,
+            )
+        )
     }
 
     override fun replace(route: String, isSingleTop: Boolean) {
-        navigate(NavIntent.Replace(
-            route = route,
-            isSingleTop = isSingleTop,
-        ))
+        navigate(
+            NavIntent.Replace(
+                route = route,
+                isSingleTop = isSingleTop,
+            )
+        )
 
     }
 

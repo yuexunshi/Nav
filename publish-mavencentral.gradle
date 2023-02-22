@@ -9,10 +9,11 @@ task androidSourcesJar(type: Jar) {
 }
 
 //--- 修改配置一 ---
-ext {path=
-        PUBLISH_GROUP_ID = 'io.github.yuexunshi'
+ext {
+    path =
+            PUBLISH_GROUP_ID = 'io.github.yuexunshi'
     PUBLISH_ARTIFACT_ID = 'Nav'
-    PUBLISH_VERSION = '1.0.2'
+    PUBLISH_VERSION = '1.1.0'
 }
 
 ext["signing.keyId"] = ''

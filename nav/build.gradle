@@ -11,8 +11,8 @@ android {
     defaultConfig {
         minSdk 21
         targetSdk 33
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 10100
+        versionName "1.1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -39,7 +39,9 @@ android {
 }
 
 dependencies {
-    api "androidx.navigation:navigation-compose:$nav_version"
-    implementation "androidx.compose.ui:ui:$compose_ui_version"
+    api "androidx.navigation:navigation-compose:$navVersion"
+    implementation "androidx.compose.ui:ui:$composeUiVersion"
     implementation 'androidx.core:core-ktx:1.8.0'
+    api "com.google.accompanist:accompanist-navigation-animation:$navAnimation"
+    testImplementation 'junit:junit:4.12'
 }

@@ -1,3 +1,11 @@
+```agsl
+implementation 'io.github.yuexunshi:Nav:1.1.0'
+```
+
+### Changelog
+- 1.1.0
+    增加导航动画
+
 Jetpack Compose Clean Navigation
 
 [Navigation 组件](https://developer.android.com/guide/navigation)支持 [Jetpack Compose](https://developer.android.com/jetpack/compose) 应用。我们可以在利用 Navigation 组件的基础架构和功能，在可组合项之间导航。然而，在项目中使用之后，我发现这个组件真的不好用：
