@@ -2,7 +2,7 @@ Jetpack Compose Clean Navigation
 
 ## 引入
 ```
-implementation 'io.github.yuexunshi:Nav:1.0.1'
+implementation 'io.github.sherlockshi:Nav:1.0.2'
 ```
 
 

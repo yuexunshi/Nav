@@ -5,9 +5,7 @@ import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.rememberNavController
+import androidx.navigation.NavHostController
 
 /**
  * @ClassName NavigationEffect.java
@@ -19,9 +17,9 @@ import androidx.navigation.compose.rememberNavController
 
 @Composable
 fun NavigationEffect(
-    startDestination: String, builder: NavGraphBuilder.() -> Unit,
+    navController: NavHostController,
+    content: @Composable () -> Unit
 ) {
-    val navController = rememberNavController()
     val activity = (LocalContext.current as? Activity)
     val flow = NavChannel.navChannel
     LaunchedEffect(activity, navController, flow) {
@@ -38,9 +36,5 @@ fun NavigationEffect(
             }
         }
     }
-    NavHost(
-        navController = navController,
-        startDestination = startDestination,
-        builder = builder
-    )
+    content()
 }
