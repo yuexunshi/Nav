@@ -1,8 +1,5 @@
-```agsl
-implementation 'io.github.yuexunshi:Nav:1.1.0'
-```
 
-### Changelog
+## Changelog
 - 1.1.0
     增加导航动画
 
@@ -10,7 +7,7 @@ Jetpack Compose Clean Navigation
 
 ## 引入
 ```
-implementation 'io.github.sherlockshi:Nav:1.0.2'
+implementation 'io.github.yuexunshi:Nav:1.1.0'
 ```
 
 
