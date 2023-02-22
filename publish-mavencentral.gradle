@@ -10,9 +10,9 @@ task androidSourcesJar(type: Jar) {
 
 //--- 修改配置一 ---
 ext {path=
-        PUBLISH_GROUP_ID = 'io.github.sherlockshi'
+        PUBLISH_GROUP_ID = 'io.github.yuexunshi'
     PUBLISH_ARTIFACT_ID = 'Nav'
-    PUBLISH_VERSION = '1.0.2'
+    PUBLISH_VERSION = '1.0.1'
 }
 
 ext["signing.keyId"] = ''
@@ -50,7 +50,7 @@ publishing {
                 name = PUBLISH_ARTIFACT_ID
                 description = 'nav导航组件，上传aar插件至mavencentral，方便使用implementation快速引入'
                 // If your project has a dedicated site, use its URL here
-                url = 'https://github.com/sherlockshi/Nav'
+                url = 'https://github.com/yuexunshi/Nav'
                 licenses {
                     license {
                         //协议类型，一般默认Apache License2.0的话不用改：
@@ -60,18 +60,18 @@ publishing {
                 }
                 developers {
                     developer {
-                        id = 'SherlockShi'
-                        name = 'SherlockShi'
-                        email = 'sherlockshi@163.com'
+                        id = 'YuexunShi'
+                        name = 'YuexunShi'
+                        email = 'yuexunshi@gmail.com'
                     }
                 }
                 // Version control info, if you're using GitHub, follow the format as seen here
                 scm {
                     //修改成你的Git地址：
-                    connection = 'https://github.com/sherlockshi/Nav'
-                    developerConnection = 'https://github.com/sherlockshi/Nav.git'
+                    connection = 'https://github.com/yuexunshi/Nav'
+                    developerConnection = 'https://github.com/yuexunshi/Nav.git'
                     //分支地址：
-                    url = 'https://github.com/sherlockshi/Nav/tree/main'
+                    url = 'https://github.com/yuexunshi/Nav/tree/main'
                 }
                 // A slightly hacky fix so that your POM will include any transitive dependencies
                 // that your library builds upon

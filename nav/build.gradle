@@ -1,9 +1,8 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'com.vanniktech.maven.publish'
 }
-//apply from: "${rootProject.projectDir}/publish-mavencentral.gradle"
+apply from: "${rootProject.projectDir}/publish-mavencentral.gradle"
 
 android {
     namespace 'com.asi.nav'
@@ -12,8 +11,8 @@ android {
     defaultConfig {
         minSdk 21
         targetSdk 33
-        versionCode 2
-        versionName "1.0.2"
+        versionCode 1
+        versionName "1.0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
