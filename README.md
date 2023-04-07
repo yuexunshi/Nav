@@ -27,9 +27,9 @@ implementation 'io.github.yuexunshi:Nav:1.1.0'
 如果使用单例或者`Hilt`提供一个单例的自定义导航器，每个`ViewModel`和`Compose`里均可以直接使用，通过调用导航器的函数，实现导航到不同的屏幕。所有导航事件能收集在一起，这样就不需要传递回调或传递`navController`给其他屏幕。达到下面一句话的简洁用法，就问你香不香？
 
 ```
-            AppNav.to(ThreeDestination("来自Two"))
-            AppNav.replace(ThreeDestination("replace来自Two"))
-            AppNav.back()
+            Nav.to(ThreeDestination("来自Two"))
+            Nav.replace(ThreeDestination("replace来自Two"))
+            Nav.back()
 ```
 
 实现一个自定义导航器，首先用接口声明出需要的函数，一般来说，前两个出栈、导航函数就可以满足应用中需要的场景，后面两个函数的功能也可以用前两个函数实现出来，但是参数略多，另外实际使用的场景也很多，为了简洁，利用后面两个函数扩展一下：
@@ -88,10 +88,10 @@ interface INav {
 
 
 
-`AppNav`实现了上面的四个导航功能。非常简单，因为要用单例，这里使用`object`，其中只是多了一个私有函数，发送导航意图，：
+`Nav`实现了上面的四个导航功能。非常简单，因为要用单例，这里使用`object`，其中只是多了一个私有函数，发送导航意图，：
 
 ```kotlin
-object AppNav : INav {
+object Nav : INav {
 
     private fun navigate(destination: NavIntent) {
         NavChannel.navigate(destination)
@@ -464,22 +464,22 @@ object FourDestination : Destination("four", listOf(
 
 ```kotlin
    Button(onClick = {
-            AppNav.to(TwoDestination.route)
+            Nav.to(TwoDestination.route)
         }) {
             Text(text = "去TwoScreen")
         }
         Button(onClick = {
-            AppNav.to(ThreeDestination("来自首页"))
+            Nav.to(ThreeDestination("来自首页"))
         }) {
             Text(text = "去ThreeScreen")
         }
         Button(onClick = {
-            AppNav.to(FourDestination(User("来着首页", "110")))
+            Nav.to(FourDestination(User("来着首页", "110")))
         }) {
             Text(text = "去FourScreen")
         }
         Button(onClick = {
-            AppNav.to(FiveDestination(20, "来自首页"))
+            Nav.to(FiveDestination(20, "来自首页"))
         }) {
             Text(text = "去FiveScreen")
         }
