@@ -33,11 +33,33 @@ fun NavigationAnimatedEffect(
     contentAlignment: Alignment = Alignment.Center,
     route: String? = null,
     enterTransition: (AnimatedContentScope<NavBackStackEntry>.() -> EnterTransition) =
-        { fadeIn(animationSpec = tween(700)) },
+        {
+            slideInHorizontally(
+                initialOffsetX = { it },
+                animationSpec = tween(durationMillis = 300)
+            ) + fadeIn(animationSpec = tween(durationMillis = 300))
+        },
     exitTransition: (AnimatedContentScope<NavBackStackEntry>.() -> ExitTransition) =
-        { fadeOut(animationSpec = tween(700)) },
-    popEnterTransition: (AnimatedContentScope<NavBackStackEntry>.() -> EnterTransition) = enterTransition,
-    popExitTransition: (AnimatedContentScope<NavBackStackEntry>.() -> ExitTransition) = exitTransition,
+        {
+            slideOutHorizontally(
+                targetOffsetX = { -it },
+                animationSpec = tween(durationMillis = 300)
+            ) + fadeOut(animationSpec =tween(durationMillis = 300))
+        },
+    popEnterTransition: (AnimatedContentScope<NavBackStackEntry>.() -> EnterTransition) =
+        {
+            slideInHorizontally(
+                initialOffsetX = { -it },
+                animationSpec = tween(durationMillis = 300)
+            ) + fadeIn(animationSpec = tween(durationMillis = 300))
+        },
+    popExitTransition: (AnimatedContentScope<NavBackStackEntry>.() -> ExitTransition) =
+        {
+            slideOutHorizontally(
+                targetOffsetX = { it },
+                animationSpec = tween(durationMillis = 300)
+            ) + fadeOut(animationSpec = tween(durationMillis = 300))
+        },
     builder: NavGraphBuilder.() -> Unit,
 ) {
     val activity = (LocalContext.current as? Activity)
